@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>nhb.template</groupId>
+		<artifactId>base</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>using-mario</artifactId>
+	<version>3.19.0</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<mario.version>3.19.0</mario.version>
+		<project.dist>dist</project.dist>
+		<project.dist.ext>${project.dist}/${project.name}</project.dist.ext>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.8</version>
+					<executions>
+						<execution>
+							<id>copy-dependencies</id>
+							<phase>package</phase>
+							<goals>
+								<goal>copy-dependencies</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${project.dist.ext}/lib</outputDirectory>
+								<overWriteReleases>true</overWriteReleases>
+								<overWriteSnapshots>false</overWriteSnapshots>
+								<overWriteIfNewer>true</overWriteIfNewer>
+								<excludeScope>provided</excludeScope>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.8</version>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<configuration>
+								<target>
+									<delete failonerror="false">
+										<fileset dir="${project.dist}" />
+									</delete>
+									<mkdir dir="${project.dist.ext}" />
+									<copy todir="${project.dist.ext}">
+										<fileset dir="${project.basedir}">
+											<include name="extension.xml" />
+											<include name="variables.properties" />
+										</fileset>
+									</copy>
+									<copy todir="${project.dist.ext}/conf" failonerror="false">
+										<fileset dir="${project.basedir}/conf" />
+									</copy>
+									<copy todir="${project.dist.ext}/lib">
+										<fileset dir="${project.build.directory}">
+											<exclude name="*-sources.jar" />
+											<exclude name="*-javadoc.jar" />
+											<include name="*.jar" />
+										</fileset>
+									</copy>
+									<echo file="${project.dist.ext}/version.txt" append="false">${project.version}</echo>
+								</target>
+							</configuration>
+							<goals>
+								<goal>run</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>nhb</groupId>
+			<artifactId>mario</artifactId>
+			<version>${mario.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>nhb.template</groupId>
+		<artifactId>base</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>using-nhb-common</artifactId>
+	<version>1.4.4</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<nhb.common.version>1.4.4</nhb.common.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>nhb.common</groupId>
+				<artifactId>nhb-common-core</artifactId>
+				<version>${nhb.common.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>nhb.common</groupId>
+				<artifactId>nhb-common-messaging</artifactId>
+				<version>${nhb.common.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>nhb.common</groupId>
+				<artifactId>nhb-common-db</artifactId>
+				<version>${nhb.common.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>nhb.common</groupId>
+				<artifactId>nhb-common-encryption</artifactId>
+				<version>${nhb.common.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>nhb.common</groupId>
+				<artifactId>nhb-common-workflow</artifactId>
+				<version>${nhb.common.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>nhb.common</groupId>
+				<artifactId>nhb-common-scripting</artifactId>
+				<version>${nhb.common.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>nhb.common</groupId>
+				<artifactId>nhb-common-predicate</artifactId>
+				<version>${nhb.common.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>using-nhb-common-messaging</module>
+	</modules>
+</project>
