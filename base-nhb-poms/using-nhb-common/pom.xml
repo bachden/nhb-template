@@ -64,5 +64,6 @@
 
 	<modules>
 		<module>using-nhb-common-messaging</module>
+		<module>using-nhb-common-messaging-provided</module>
 	</modules>
 </project>
