@@ -101,7 +101,7 @@
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>snapshots</name>
-			<url>${artifact.xtap.io/libs-snapshot-local</url>
+			<url>${artifact.xtap.io}/libs-snapshot-local</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
