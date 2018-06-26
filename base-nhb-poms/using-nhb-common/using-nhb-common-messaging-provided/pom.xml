@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>nhb.template</groupId>
 		<artifactId>using-nhb-common</artifactId>
-		<version>1.5.2</version>
+		<version>1.5.3</version>
 	</parent>
 
 	<artifactId>using-nhb-common-messaging-provided</artifactId>

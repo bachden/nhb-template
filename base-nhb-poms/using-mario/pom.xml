@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -9,11 +10,11 @@
 	</parent>
 
 	<artifactId>using-mario</artifactId>
-	<version>3.20.2</version>
+	<version>3.20.3</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<mario.version>3.20.2</mario.version>
+		<mario.version>3.20.3</mario.version>
 		<project.dist>dist</project.dist>
 		<project.dist.ext>${project.dist}/${project.name}</project.dist.ext>
 	</properties>
@@ -71,7 +72,8 @@
 											<include name="*.jar" />
 										</fileset>
 									</copy>
-									<echo file="${project.dist.ext}/version.txt" append="false">${project.version}</echo>
+									<echo file="${project.dist.ext}/version.txt"
+										append="false">${project.version}</echo>
 								</target>
 							</configuration>
 							<goals>
@@ -104,7 +106,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.22</version>
+			<version>1.16.22</version><!--$NO-MVN-MAN-VER$ -->
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
