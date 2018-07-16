@@ -9,11 +9,11 @@
 	</parent>
 
 	<artifactId>using-nhb-common</artifactId>
-	<version>1.5.5</version>
+	<version>1.5.6</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<nhb.common.version>1.5.5</nhb.common.version>
+		<nhb.common.version>1.5.6</nhb.common.version>
 	</properties>
 
 	<dependencyManagement>
