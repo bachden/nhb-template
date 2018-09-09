@@ -9,11 +9,11 @@
 	</parent>
 
 	<artifactId>using-mario</artifactId>
-	<version>3.20.15</version>
+	<version>3.20.16</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<mario.version>3.20.15</mario.version>
+		<mario.version>3.20.16</mario.version>
 		<project.dist>dist</project.dist>
 		<project.dist.ext>${project.dist}/${project.name}</project.dist.ext>
 	</properties>
