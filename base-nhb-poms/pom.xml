@@ -5,10 +5,6 @@
 	<artifactId>base</artifactId>
 	<version>1.0.0</version>
 
-	<properties>
-		<artifact.xtap.io>http://artifact.xtap.io/artifactory</artifact.xtap.io>
-	</properties>
-
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -96,13 +92,13 @@
 		<repository>
 			<id>central</id>
 			<name>releases</name>
-			<url>${artifact.xtap.io}/libs-release-local</url>
+			<url>${ARTIFACTORY_CONTEXT_URL}/libs-release-local</url>
 		</repository>
 
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>snapshots</name>
-			<url>${artifact.xtap.io}/libs-snapshot-local</url>
+			<url>${ARTIFACTORY_CONTEXT_URL}/libs-snapshot-local</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
